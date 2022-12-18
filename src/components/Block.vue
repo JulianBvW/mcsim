@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="mineBlock()">{{ currentBlock }}</button>
+        <b-img rounded class="block" @click="mineBlock()" :src="getImgUrl(currentBlock)" :alt="currentBlock"></b-img>
     </div>
 </template>
 
@@ -36,11 +36,29 @@ export default {
             }
 
             return 'stone'
+        },
+        getImgUrl(resource) {
+            let images = require.context('../assets/', false, /\.png$/)
+            return images('./' + resource + ".png")
         }
     }
 }
 </script>
 
 <style scoped>
+.block {
+    box-shadow: 0 3px 8px 1px #969696;
+    margin: 25px;
+    width: 150px;
+}
 
+.block:hover {
+    margin: 20px;
+    width: 160px;
+}
+
+.block:active {
+    margin: 22px;
+    width: 156px;
+}
 </style>
