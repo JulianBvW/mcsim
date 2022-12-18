@@ -1,14 +1,15 @@
 <template>
-  <div>
-    <h1 style="font-weight: 200">Inventory</h1>
-  </div>
+    <div>
+        <p>{{ $store.state.inventory }}</p>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'Inventory'
+    name: 'Inventory'
 }
 </script>
 
 <style scoped>
+
 </style>
