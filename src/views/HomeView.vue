@@ -1,23 +1,30 @@
 <template>
     <div>
-        <Title />
+        <HeaderBar />
         <div class="grid-content">
-            <div class="window inventory">inventory</div>
-            <div class="window achievements">achievements</div>
+            <div class="window inventory"><Inventory /></div>
+            <div class="window goals"><Goals /></div>
             <div class="window block"><Block /></div>
-            <div class="window farms">farms</div>
+            <div class="window farms"><Farms /></div>
         </div>
     </div>
 </template>
 
 <script>
-import Title from '@/components/Title.vue'
+import HeaderBar from '@/components/HeaderBar.vue'
+import Inventory from '@/components/Inventory.vue'
+import Goals from '@/components/Goals.vue'
 import Block from '@/components/Block.vue'
+import Farms from '@/components/Farms.vue'
 
 export default {
     name: 'HomeView',
     components: {
-        Title
+        HeaderBar,
+        Inventory,
+        Goals,
+        Block,
+        Farms
     }
 }
 </script>
@@ -44,7 +51,7 @@ export default {
     grid-row: 1/3;
 }
 
-.achievements {
+.goals {
     grid-column: 2/3;
     grid-row: 1/2;
 }
