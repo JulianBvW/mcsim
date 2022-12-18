@@ -1,15 +1,19 @@
 export default [
     {
         item: 'stone',
-        weight: 100
+        weight: 200
     },
     {
         item: 'coal',
-        weight: 10
+        weight: 20
     },
     {
         item: 'iron',
-        weight: 5
+        weight: 15
+    },
+    {
+        item: 'redstone',
+        weight: 2
     },
     {
         item: 'diamond',
