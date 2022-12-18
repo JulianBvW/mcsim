@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{ $store.state.inventory }}</p>
+        <p class="unselectable">{{ $store.state.inventory }}</p>
     </div>
 </template>
 
