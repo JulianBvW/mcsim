@@ -12,24 +12,29 @@ export default {
             currentBlock: 'stone'
         }
     },
+    computed: {
+        miningLevel() {
+            return this.$store.state.currentGoalId
+        },
+        resources() {
+            return this.$store.state.resources
+        }
+    },
     methods: {
         mineBlock() {
             this.$store.commit('addToInventory', this.currentBlock)
             this.currentBlock = this.getRandomBlock()
         },
-        getRandomBlock() {
-            let resources = this.$store.state.resources
-
-            let weightSum = 0
-            for (const resource of resources) {
-                weightSum += resource.weight
+        getRandomBlock() {let weightSum = 0
+            for (const resource of this.resources) {
+                weightSum += resource.weight(this.miningLevel)
             }
 
             let randomChoice = Math.random() * weightSum
 
             let currentWeightSum = 0
-            for (const resource of resources) {
-                currentWeightSum += resource.weight
+            for (const resource of this.resources) {
+                currentWeightSum += resource.weight(this.miningLevel)
                 if (currentWeightSum > randomChoice) {
                     return resource.item
                 }

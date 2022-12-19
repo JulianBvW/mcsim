@@ -1,22 +1,38 @@
+import * as v from './goal_aliases'
+
 export default [
     {
         item: 'stone',
-        weight: 200
+        weight: (miningLevel) => {
+            if (miningLevel > v.MINING_LEVEL_DIAMOND) { return 100 }
+            return 200
+        }
     },
     {
         item: 'coal',
-        weight: 20
+        weight: (miningLevel) => {
+            return 20
+        }
     },
     {
         item: 'iron',
-        weight: 15
+        weight: (miningLevel) => {
+            if (miningLevel >= v.MINING_LEVEL_STONE) { return 15 }
+            return 0
+        }
     },
     {
         item: 'redstone',
-        weight: 2
+        weight: (miningLevel) => {
+            if (miningLevel >= v.MINING_LEVEL_IRON) { return 2 }
+            return 0
+        }
     },
     {
         item: 'diamond',
-        weight: 1
-    },
+        weight: (miningLevel) => {
+            if (miningLevel >= v.MINING_LEVEL_IRON) { return 1 }
+            return 0
+        }
+    }
 ]
