@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+    <router-view />
 </template>
 
 <style>
@@ -9,9 +9,9 @@
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -30,5 +30,17 @@ html {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.windowHighlight {
+    height: 50px;
+    margin: 0;
+    margin-top: -25px;
+    margin-left: -20px;
+}
+
+.pngShadow {
+    -webkit-filter: drop-shadow(5px 5px 5px #969696);
+    filter: drop-shadow(5px 5px 5px #969696);
 }
 </style>

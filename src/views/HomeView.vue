@@ -6,6 +6,8 @@
             <div class="window goals"><Goals /></div>
             <div class="window block"><Block /></div>
             <div class="window farms"><Farms /></div>
+            <b-img class="windowHighlight inventory pngShadow" :src="getImgUrl('open_chest')" :alt="Inventory" />
+            <b-img class="windowHighlight block pngShadow" :src="getImgUrl('pickaxe_iron')" :alt="Block" />
         </div>
     </div>
 </template>
@@ -25,6 +27,12 @@ export default {
         Goals,
         Block,
         Farms
+    },
+    methods: {
+        getImgUrl(f) {
+            let images = require.context('../assets/', false, /\.png$/)
+            return images('./' + f + ".png")
+        }
     }
 }
 </script>

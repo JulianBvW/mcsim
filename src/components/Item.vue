@@ -40,7 +40,7 @@ export default {
 
 .countFont {
     font-family: 'Minecraftia';
-    margin: 12px;
     font-size: x-large;
+    margin: 12px;
 }
 </style>

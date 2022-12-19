@@ -1,6 +1,7 @@
 <template>
-    <div style="margin: 15px;">
+    <div style="margin: 25px;">
         <Item v-for="(count, item) of $store.state.inventory" :key="item" :item="item" :count="count"/>
+        <p class="emptyMsg" v-if="Object.keys(this.$store.state.inventory).length <= 0">Empty!</p>
     </div>
 </template>
 
@@ -11,10 +12,20 @@ export default {
     name: 'Inventory',
     components: {
         Item
+    },
+    methods: {
+        getImgUrl(f) {
+            let images = require.context('../assets/', false, /\.png$/)
+            return images('./' + f + ".png")
+        }
     }
 }
 </script>
 
 <style scoped>
-
+.emptyMsg {
+    font-family: 'Minecraftia';
+    font-size: x-large;
+    margin: 40px;
+}
 </style>
