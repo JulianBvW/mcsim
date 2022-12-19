@@ -26,6 +26,6 @@ export default {
 .emptyMsg {
     font-family: 'Minecraftia';
     font-size: x-large;
-    margin: 35px;
+    margin: 33px;
 }
 </style>

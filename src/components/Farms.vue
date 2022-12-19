@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 class="unselectable" style="font-weight: 200">Farms</h1>
   </div>
 </template>
 
