@@ -25,6 +25,14 @@ export default [
         }
     },
     {
+        id: 3,
+        name: 'Enchanting Table',
+        image: 'enchanting-table',
+        requires: {
+            'diamond': 2
+        }
+    },
+    {
         id: 99,
         name: 'Get Everything',
         image: 'trophy',

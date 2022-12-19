@@ -4,19 +4,22 @@ export default [
     {
         item: 'stone',
         weight: (miningLevel) => {
-            if (miningLevel > v.MINING_LEVEL_DIAMOND) { return 100 }
+            if (miningLevel > v.ENCHANTING_ACCESS)     { return 100 }
+            if (miningLevel >= v.MINING_LEVEL_DIAMOND) { return 150 }
             return 200
         }
     },
     {
         item: 'coal',
         weight: (miningLevel) => {
+            if (miningLevel >= v.ENCHANTING_ACCESS) { return 30 }
             return 20
         }
     },
     {
         item: 'iron',
         weight: (miningLevel) => {
+            if (miningLevel >= v.ENCHANTING_ACCESS)  { return 25 }
             if (miningLevel >= v.MINING_LEVEL_STONE) { return 15 }
             return 0
         }
@@ -24,14 +27,16 @@ export default [
     {
         item: 'redstone',
         weight: (miningLevel) => {
-            if (miningLevel >= v.MINING_LEVEL_IRON) { return 2 }
+            if (miningLevel >= v.ENCHANTING_ACCESS) { return 15 }
+            if (miningLevel >= v.MINING_LEVEL_IRON) { return 5 }
             return 0
         }
     },
     {
         item: 'diamond',
         weight: (miningLevel) => {
-            if (miningLevel >= v.MINING_LEVEL_IRON) { return 1 }
+            if (miningLevel >= v.ENCHANTING_ACCESS) { return 10 }
+            if (miningLevel >= v.MINING_LEVEL_IRON) { return 3 }
             return 0
         }
     }
