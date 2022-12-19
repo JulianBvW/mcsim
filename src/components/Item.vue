@@ -1,7 +1,7 @@
 <template>
     <div class="itemShow">
         <b-img class="imgIcon" :src="getImgUrl(item)" :alt="item" />
-        <p class="unselectable countFont">{{ countFormatted }}</p>
+        <p class="unselectable mcfont countFont">{{ countFormatted }}</p>
     </div>
 </template>
 
@@ -39,7 +39,6 @@ export default {
 }
 
 .countFont {
-    font-family: 'Minecraftia';
     font-size: x-large;
     margin: 12px;
 }

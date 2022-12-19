@@ -8,6 +8,10 @@
     src: url('./assets/Minecraftia-Regular.ttf');
 }
 
+.mcfont {
+    font-family: 'Minecraftia';
+}
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

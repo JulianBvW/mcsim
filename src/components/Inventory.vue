@@ -1,7 +1,7 @@
 <template>
     <div style="margin: 25px;">
         <Item v-for="(count, item) of $store.state.inventory" :key="item" :item="item" :count="count"/>
-        <p class="emptyMsg" v-if="Object.keys(this.$store.state.inventory).length <= 0">Empty!</p>
+        <p class="mcfont emptyMsg" v-if="Object.keys(this.$store.state.inventory).length <= 0">Empty!</p>
     </div>
 </template>
 
@@ -24,7 +24,6 @@ export default {
 
 <style scoped>
 .emptyMsg {
-    font-family: 'Minecraftia';
     font-size: x-large;
     margin: 33px;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <h1 class="unselectable" style="font-family: 'Minecraftia'; margin-top: 30px;">MC Simulator</h1>
+    <h1 class="mcfont unselectable" style="margin-top: 30px;">MC Simulator</h1>
   </div>
 </template>
 
