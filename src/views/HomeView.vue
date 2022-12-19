@@ -7,10 +7,10 @@
             <div class="window block"><Block /></div>
             <div class="window farms"><Farms /></div>
 
-            <b-img class="windowIcon inventory pngShadow" :src="getImgUrl('icon-inventory')" alt="Inventory" v-b-tooltip.hover title="Inventory" />
-            <b-img class="windowIcon goals pngShadow" :src="getImgUrl('icon-goals')" alt="Goals" v-b-tooltip.hover title="Goals" />
-            <b-img class="windowIcon block pngShadow" :src="getImgUrl(currentPickaxe)" alt="Block" v-b-tooltip.hover title="Block Mining Area" />
-            <b-img class="windowIcon farms pngShadow" :src="getImgUrl('icon-farms')" alt="Farms" v-b-tooltip.hover title="Automatic Farms" />
+            <b-img class="windowIcon inventory pngShadow" :src="getImgUrl('icon-inventory')" alt="Inventory" v-b-tooltip.hover.top="'Inventory'" />
+            <b-img class="windowIcon goals pngShadow" :src="getImgUrl('icon-goals')" alt="Goals" v-b-tooltip.hover.top="'Goals'" />
+            <b-img class="windowIcon block pngShadow" :src="getImgUrl(currentPickaxe)" alt="Block" v-b-tooltip.hover.top="'Block Mining Area'" />
+            <b-img class="windowIcon farms pngShadow" :src="getImgUrl('icon-farms')" alt="Farms" v-b-tooltip.hover.top="'Automatic Farms'" />
         </div>
     </div>
 </template>
