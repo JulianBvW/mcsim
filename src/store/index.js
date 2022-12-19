@@ -23,6 +23,10 @@ export default createStore({
             state.inventory[item]++
         },
         finishGoal(state) {
+            let reqs = state.goals[state.currentGoalId].requires
+            for (let item of Object.keys(reqs)) {
+                state.inventory[item] -= reqs[item]
+            }
             state.currentGoalId++
         }
     },

@@ -20,7 +20,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
 [X] shaky
-[ ] removeItem
+[X] removeItem
 [X] animateGoalClick
 [X] windowIconTip
 [ ] Mining Levels
