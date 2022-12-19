@@ -39,7 +39,7 @@ export default {
         },
         getImgUrl(resource) {
             let images = require.context('../assets/', false, /\.png$/)
-            return images('./' + resource + ".png")
+            return images('./face-' + resource + ".png")
         }
     }
 }

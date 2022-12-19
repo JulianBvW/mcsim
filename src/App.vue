@@ -3,6 +3,11 @@
 </template>
 
 <style>
+@font-face {
+    font-family: Minecraftia;
+    src: url('./assets/Minecraftia-Regular.ttf');
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
