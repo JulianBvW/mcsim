@@ -1,17 +1,21 @@
 <template>
     <div>
-        <b-img rounded class="block" @click="mineBlock()" :src="getImgUrl(currentBlock)" :alt="currentBlock"></b-img>
+        <b-img v-if="goalLevel < 7" class="block" @click="mineBlock()" :src="getImgUrl(currentBlock)" :alt="currentBlock"></b-img>
+        <div v-if="goalLevel >= 7" class="cluster" :class="{ 'cluster-clicked': clusterClicked }">
+            <b-img v-for="i in [0, 1, 2, 3]" :key="i" class="cluster-block" :class="{ 'cluster-block-clicked': clusterClicked }" :src="getImgUrl(currentBlocks[i])" :alt="currentBlocks[i]"></b-img>
+            <div class="cluster-button" @click="mineBlocks()"></div>
+        </div>
     </div>
 </template>
 
 <script>
-import * as v from '../data/goal_aliases'
-
 export default {
     name: 'Block',
     data() {
         return {
-            currentBlock: 'stone'
+            currentBlock: 'stone',
+            currentBlocks: ['stone', 'stone', 'diamond', 'stone'],
+            clusterClicked: false
         }
     },
     computed: {
@@ -24,12 +28,23 @@ export default {
     },
     methods: {
         mineBlock() {
-            let resource = this.resources.find(r => r.item == this.currentBlock)
+            this.collectBlock(this.currentBlock)
+            this.currentBlock = this.getRandomBlock()
+        },
+        mineBlocks() {
+            for (let i in [0, 1, 2, 3]) {
+                this.collectBlock(this.currentBlocks[i])
+                this.currentBlocks[i] = this.getRandomBlock()
+            }
+            this.clusterClicked = true
+            setTimeout(() => { this.clusterClicked = false }, 50)
+        },
+        collectBlock(block) {
+            let resource = this.resources.find(r => r.item == block)
             this.$store.commit('addToInventory', {
-                item: this.currentBlock,
+                item: block,
                 count: resource.amount(this.goalLevel)
             })
-            this.currentBlock = this.getRandomBlock()
         },
         getRandomBlock() {
             let weightSum = 0
@@ -64,13 +79,42 @@ export default {
     width: 150px;
 }
 
-.block:hover {
-    margin: 20px;
-    width: 160px;
-}
-
 .block:active {
     margin: 22px;
     width: 156px;
+}
+
+.cluster {
+    margin: 25px;
+    width: 150px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 75px 75px;
+    grid-template-rows: 75px 75px;
+}
+
+.cluster-clicked {
+    margin: 22px;
+    width: 156px;
+    height: 156px;
+    display: grid;
+    grid-template-columns: 78px 78px;
+    grid-template-rows: 78px 78px;
+}
+
+.cluster-block {
+    box-shadow: 0 3px 8px 1px #969696;
+    width: 75px;
+}
+
+.cluster-block-clicked {
+    box-shadow: 0 3px 8px 1px #969696;
+    width: 78px;
+}
+
+.cluster-button {
+    width: 150px;
+    height: 150px;
+    margin-top: -150px;
 }
 </style>
