@@ -22,5 +22,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 [X] shaky
 [ ] removeItem
 [X] animateGoalClick
-[ ] windowIconTip
+[X] windowIconTip
 [ ] Mining Levels
