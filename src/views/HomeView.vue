@@ -6,8 +6,8 @@
             <div class="window goals"><Goals /></div>
             <div class="window block"><Block /></div>
             <div class="window farms"><Farms /></div>
-            <b-img class="windowHighlight inventory pngShadow" :src="getImgUrl('open_chest')" :alt="Inventory" />
-            <b-img class="windowHighlight block pngShadow" :src="getImgUrl('pickaxe_iron')" :alt="Block" />
+            <b-img class="windowIcon inventory pngShadow" :src="getImgUrl('open_chest')" :alt="Inventory" />
+            <b-img class="windowIcon block pngShadow" :src="getImgUrl('pickaxe_iron')" :alt="Block" />
         </div>
     </div>
 </template>

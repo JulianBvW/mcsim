@@ -32,7 +32,7 @@ html {
     user-select: none;
 }
 
-.windowHighlight {
+.windowIcon {
     height: 50px;
     margin: 0;
     margin-top: -25px;
