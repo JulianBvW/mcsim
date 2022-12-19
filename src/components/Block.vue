@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import * as v from '../data/goal_aliases'
+
 export default {
     name: 'Block',
     data() {
@@ -13,7 +15,7 @@ export default {
         }
     },
     computed: {
-        miningLevel() {
+        goalLevel() {
             return this.$store.state.currentGoalId
         },
         resources() {
@@ -22,19 +24,24 @@ export default {
     },
     methods: {
         mineBlock() {
-            this.$store.commit('addToInventory', {item: this.currentBlock, count: 1})
+            let resource = this.resources.find(r => r.item == this.currentBlock)
+            this.$store.commit('addToInventory', {
+                item: this.currentBlock,
+                count: resource.amount(this.goalLevel)
+            })
             this.currentBlock = this.getRandomBlock()
         },
-        getRandomBlock() {let weightSum = 0
+        getRandomBlock() {
+            let weightSum = 0
             for (const resource of this.resources) {
-                weightSum += resource.weight(this.miningLevel)
+                weightSum += resource.weight(this.goalLevel)
             }
 
             let randomChoice = Math.random() * weightSum
 
             let currentWeightSum = 0
             for (const resource of this.resources) {
-                currentWeightSum += resource.weight(this.miningLevel)
+                currentWeightSum += resource.weight(this.goalLevel)
                 if (currentWeightSum > randomChoice) {
                     return resource.item
                 }

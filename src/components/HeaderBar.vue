@@ -1,6 +1,7 @@
 <template>
   <div class="title">
     <h1 class="mcfont unselectable" style="margin-top: 30px;">MC Simulator</h1>
+    <button @click="$store.state.currentGoalId++">cheat</button>
   </div>
 </template>
 
