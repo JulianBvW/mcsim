@@ -1,5 +1,5 @@
 <template>
-    <div style="margin: 25px;">
+    <div style="margin: 22px; margin-left: 30px;">
         <Item v-for="(count, item) of $store.state.inventory" :key="item" :item="item" :count="count" :size="'large'" :color="'black'" />
         <p class="mcfont emptyMsg" v-if="Object.keys(this.$store.state.inventory).length <= 0">Empty!</p>
     </div>

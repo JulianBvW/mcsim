@@ -43,7 +43,7 @@ export default {
                 return {
                     '--img-height': '40px',
                     '--font-size': 'x-large',
-                    '--font-margin': '12px',
+                    '--font-margin': '10px',
                     '--font-color': this.color
                 }
             } else if (this.size == 'small') {
@@ -66,6 +66,7 @@ export default {
 
 .imgIcon {
     height: var(--img-height);
+    margin-right: 5px;
 }
 
 .countFont {
