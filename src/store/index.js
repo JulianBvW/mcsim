@@ -6,9 +6,14 @@ export default createStore({
     state: {
         resources: resources,
         goals: goals,
+        currentGoalId: 0,
         inventory: {}
     },
     getters: {
+        currentGoal(state) {
+            // TODO: Last Goal
+            return state.goals[state.currentGoalId]
+        }
     },
     mutations: {
         addToInventory(state, item) {
@@ -16,6 +21,9 @@ export default createStore({
                 state.inventory[item] = 0
             }
             state.inventory[item]++
+        },
+        finishGoal(state) {
+            state.currentGoalId++
         }
     },
     actions: {

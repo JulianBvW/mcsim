@@ -23,5 +23,13 @@ export default [
         requires: {
             'diamond': 3
         }
+    },
+    {
+        id: 99,
+        name: 'Get Everything',
+        image: 'trophy',
+        requires: {
+            'diamond': 10000
+        }
     }
 ]

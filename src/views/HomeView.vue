@@ -8,7 +8,7 @@
             <div class="window farms"><Farms /></div>
             <b-img class="windowIcon inventory pngShadow" :src="getImgUrl('icon-inventory')" alt="Inventory" />
             <b-img class="windowIcon goals pngShadow" :src="getImgUrl('icon-goals')" alt="Goals" />
-            <b-img class="windowIcon block pngShadow" :src="getImgUrl('pickaxe-iron')" alt="Block" />
+            <b-img class="windowIcon block pngShadow" :src="getImgUrl(currentPickaxe)" alt="Block" />
             <b-img class="windowIcon farms pngShadow" :src="getImgUrl('icon-farms')" alt="Farms" />
         </div>
     </div>
@@ -34,6 +34,16 @@ export default {
         getImgUrl(f) {
             let images = require.context('../assets/', false, /\.png$/)
             return images('./' + f + ".png")
+        }
+    },
+    computed: {
+        currentPickaxe() {
+            switch (this.$store.getters.currentGoal.id) {
+                case 0: return 'pickaxe-wood'
+                case 1: return 'pickaxe-stone'
+                case 2: return 'pickaxe-iron'
+                default: return 'pickaxe-diamond'
+            }
         }
     }
 }
