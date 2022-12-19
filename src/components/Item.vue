@@ -33,6 +33,9 @@ export default {
     },
     computed: {
         countFormatted() {
+            if (this.size == 'small' && this.count > 1_000) {
+                return Intl.NumberFormat().format(Math.round(this.count / 100)/10) + 'k'
+            }
             if (this.count > 100_000) {
                 return Intl.NumberFormat().format(Math.round(this.count / 1000)) + 'k'
             }

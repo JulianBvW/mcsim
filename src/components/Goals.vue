@@ -56,6 +56,7 @@ export default {
     grid-template-columns: 100px 100px;
     justify-content: center;
     align-content: center;
+    margin-left: 5px;
 }
 
 .goalImg {
