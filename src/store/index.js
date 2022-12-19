@@ -1,12 +1,14 @@
 import { createStore } from 'vuex'
 import resources from '@/data/resources'
 import goals from '@/data/goals'
+import farms from '@/data/farms'
 
 export default createStore({
     state: {
         resources: resources,
         goals: goals,
         currentGoalId: 0,
+        farms: farms,
         inventory: {'wood': 1000, 'xp': 1000}
     },
     getters: {
