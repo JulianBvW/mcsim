@@ -1,5 +1,5 @@
 <template>
-    <div style="margin: 15px;">
+    <div style="margin: 20px;">
         <Farm v-for="farm in farms" :key="farm.name" :farm="farm"/>
     </div>
 </template>

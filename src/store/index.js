@@ -7,14 +7,15 @@ export default createStore({
     state: {
         resources: resources,
         goals: goals,
-        currentGoalId: 0,
+        goalLevel: 0,
         farms: farms,
+        farmLevel: new Array(farms.length).fill(0),
         inventory: {'wood': 1000, 'xp': 1000}
     },
     getters: {
         currentGoal(state) {
             // TODO: Last Goal
-            return state.goals[state.currentGoalId]
+            return state.goals[state.goalLevel]
         }
     },
     mutations: {
@@ -25,11 +26,14 @@ export default createStore({
             state.inventory[b.item] += b.count
         },
         finishGoal(state) {
-            let reqs = state.goals[state.currentGoalId].requires
+            let reqs = state.goals[state.goalLevel].requires
             for (let item of Object.keys(reqs)) {
                 state.inventory[item] -= reqs[item]
             }
-            state.currentGoalId++
+            state.goalLevel++
+        },
+        upgradeFarm(state, id) {
+            state.farmLevel[id]++
         }
     },
     actions: {

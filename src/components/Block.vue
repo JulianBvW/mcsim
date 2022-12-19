@@ -20,7 +20,7 @@ export default {
     },
     computed: {
         goalLevel() {
-            return this.$store.state.currentGoalId
+            return this.$store.state.goalLevel
         },
         resources() {
             return this.$store.state.resources
