@@ -32,7 +32,8 @@ export default [
         name: 'Enchanting Table',
         image: 'enchanting-table',
         requires: {
-            'diamond': 2
+            'diamond': 2,
+            'xp': 30
         }
     },
     {
