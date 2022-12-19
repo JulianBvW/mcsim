@@ -17,3 +17,9 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### TODO
+- Upgrading consumes Items
+- Upgrading Modal
+- Farms producing Items
+- Levels
