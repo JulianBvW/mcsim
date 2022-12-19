@@ -37,6 +37,36 @@ export default [
         }
     },
     {
+        id: 4,
+        name: 'Beacon',
+        image: 'beacon',
+        requires: {
+            'wood': 1,
+            'diamond': 2,
+            'coal': 2
+        }
+    },
+    {
+        id: 5,
+        name: 'Haste II',
+        image: 'haste',
+        requires: {
+            'iron': 1476,
+            'diamond': 1
+        }
+    },
+    {
+        id: 6,
+        name: 'Tunnel Bore',
+        image: 'tnt',
+        requires: {
+            'stone': 400,
+            'redstone': 40,
+            'iron': 300,
+            'xp': 100
+        }
+    },
+    {
         id: 99,
         name: 'Get Everything',
         image: 'trophy',

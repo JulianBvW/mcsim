@@ -7,7 +7,7 @@ export default createStore({
         resources: resources,
         goals: goals,
         currentGoalId: 0,
-        inventory: {'wood': 10}
+        inventory: {'wood': 1000, 'xp': 1000}
     },
     getters: {
         currentGoal(state) {
