@@ -2,7 +2,7 @@
     <div class="goalGrid">
         <b-img class="goalImg pngShadow" @click="attemptUpgrade" :src="getImgUrl(currentGoal.image)" :alt="currentGoal.name" />
         <p class="goalName mcfont">{{ currentGoal.name }}</p>
-        <Item v-for="(count, item) of currentGoal.requires" :key="item" class="goalRequired" :item="item" :count="count" :size="'small'" :color="hasEnough(item, count) ? 'green' : 'red'" />
+        <Item v-for="(count, item) of currentGoal.requires" :key="item" class="goalRequired" :item="item" :count="count" :size="'small'" :color="hasEnough(item, count) ? 'green' : 'red'" ref="reqItems" />
     </div>
 </template>
 
@@ -39,6 +39,10 @@ export default {
         attemptUpgrade() {
             if (this.satisfiesRequirements) {
                 this.$store.commit('finishGoal')
+            } else {
+                for (let i = 0; i < this.$refs.reqItems.length; i++) {
+                    this.$refs.reqItems[i].doShake()
+                }
             }
         }
     }
