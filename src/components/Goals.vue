@@ -66,6 +66,14 @@ export default {
     grid-row: 1/2;
 }
 
+.goalImg:hover {
+    height: 74px;
+}
+
+.goalImg:active {
+    height: 72px;
+}
+
 .goalName {
     justify-self: center;
     grid-column: 1/3;
