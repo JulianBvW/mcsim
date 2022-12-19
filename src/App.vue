@@ -33,10 +33,10 @@ html {
 }
 
 .windowIcon {
-    height: 50px;
+    height: 45px;
     margin: 0;
     margin-top: -27px;
-    margin-left: -22px;
+    margin-left: -18px;
 }
 
 .pngShadow {
