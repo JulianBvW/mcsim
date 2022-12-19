@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         mineBlock() {
-            this.$store.commit('addToInventory', this.currentBlock)
+            this.$store.commit('addToInventory', {item: this.currentBlock, count: 1})
             this.currentBlock = this.getRandomBlock()
         },
         getRandomBlock() {let weightSum = 0

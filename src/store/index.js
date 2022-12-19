@@ -16,11 +16,11 @@ export default createStore({
         }
     },
     mutations: {
-        addToInventory(state, item) {
-            if (!(item in state.inventory)) {
-                state.inventory[item] = 0
+        addToInventory(state, b) {
+            if (!(b.item in state.inventory)) {
+                state.inventory[b.item] = 0
             }
-            state.inventory[item]++
+            state.inventory[b.item] += b.count
         },
         finishGoal(state) {
             let reqs = state.goals[state.currentGoalId].requires
