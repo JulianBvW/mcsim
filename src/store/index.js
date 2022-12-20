@@ -33,6 +33,10 @@ export default createStore({
             state.goalLevel++
         },
         upgradeFarm(state, id) {
+            let reqs = state.farms[id].requires[state.farmLevel[id]]
+            for (let item of Object.keys(reqs)) {
+                state.inventory[item] -= reqs[item]
+            }
             state.farmLevel[id]++
         }
     },
