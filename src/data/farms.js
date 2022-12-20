@@ -135,6 +135,7 @@ export default [
                 'coal': 2000,
                 'iron': 200,
                 'redstone': 300,
+                'diamond': 20,
                 'xp': 4000
             },
             {
@@ -143,6 +144,7 @@ export default [
                 'coal': 2000,
                 'iron': 200,
                 'redstone': 300,
+                'diamond': 20,
                 'xp': 4000
             },
             {
@@ -151,6 +153,7 @@ export default [
                 'coal': 2000,
                 'iron': 200,
                 'redstone': 300,
+                'diamond': 20,
                 'xp': 4000
             }
         ]
