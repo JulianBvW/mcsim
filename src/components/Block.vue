@@ -45,6 +45,10 @@ export default {
                 item: block,
                 count: resource.amount(this.goalLevel)
             })
+            this.$store.commit('addToInventory', {
+                item: 'xp',
+                count: resource.xp(this.goalLevel)
+            })
         },
         getRandomBlock() {
             let weightSum = 0
