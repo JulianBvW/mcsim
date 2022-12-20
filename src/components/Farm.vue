@@ -24,7 +24,7 @@
                     <div class="modal-footer" style="padding-top: 20px;" v-if="!this.isMaxLevel">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; width: 100%;">
                             <p class="mcfont" style="align-self: flex-start;">{{ isLocked ? 'Unlock:' : 'Upgrade:' }}</p>
-                            <b-img class="upgrade-img" @click="doUpgrade()" :src="currentIcon" alt="upgrade" />
+                            <b-img class="upgrade-img pngShadow" @click="doUpgrade()" :src="currentIcon" alt="upgrade" />
                         </div>
                         <div style="display: grid; width: 550px; grid-template-columns: 1fr 1fr 1fr; margin-top: -20px;">
                             <Item v-for="(count, item) of currentRequirements" :key="item" :item="item" :count="count" :size="'small'" :color="hasEnough(item, count) ? 'green' : 'red'" ref="reqItems" />
@@ -132,9 +132,25 @@ export default {
 }
 
 .upgrade-img {
-    height: 50px;
+    margin-top: 2px;
+    margin-bottom: 2px;
     margin-left: auto;
     margin-right: 10px;
+    width: 50px;
+}
+
+.upgrade-img:hover {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 8px;
+    width: 54px;
+}
+
+.upgrade-img:active {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-right: 9px;
+    width: 52px;
 }
 
 .production-progress {
