@@ -2,6 +2,7 @@
     <div class="itemShow" :class="{ animateShake: shaking }" :style="cssProps">
         <b-img class="imgIcon" :src="getImgUrl(item)" :alt="item" />
         <p class="unselectable mcfont countFont">{{ countFormatted }}</p>
+        <p class="unselectable mcfont diffFont" v-if="difference">(+{{ differenceFormatted }})</p>
     </div>
 </template>
 
@@ -17,7 +18,8 @@ export default {
         item: String,
         count: Number,
         size: String,
-        color: String
+        color: String,
+        difference: Number
     },
     methods: {
         getImgUrl(resource) {
@@ -33,13 +35,22 @@ export default {
     },
     computed: {
         countFormatted() {
-            if (this.size == 'small' && this.count > 1_000) {
+            if (this.size == 'small' && this.count >= 1_000) {
                 return Intl.NumberFormat().format(Math.round(this.count / 100)/10) + 'k'
             }
-            if (this.count > 100_000) {
+            if (this.count >= 100_000) {
                 return Intl.NumberFormat().format(Math.round(this.count / 1000)) + 'k'
             }
             return Intl.NumberFormat().format(this.count)
+        },
+        differenceFormatted() {
+            if (this.size == 'small' && this.difference >= 1_000) {
+                return Intl.NumberFormat().format(Math.round(this.difference / 100)/10) + 'k'
+            }
+            if (this.difference >= 100_000) {
+                return Intl.NumberFormat().format(Math.round(this.difference / 1000)) + 'k'
+            }
+            return Intl.NumberFormat().format(this.difference)
         },
         cssProps() {
             if (this.size == 'large') {
@@ -76,6 +87,12 @@ export default {
     font-size: var(--font-size);
     margin: var(--font-margin);
     color: var(--font-color);
+}
+
+.diffFont {
+    font-size: var(--font-size);
+    margin: var(--font-margin);
+    color: darkmagenta;
 }
 
 .animateShake {
