@@ -41,14 +41,18 @@ export default {
         },
         collectBlock(block) {
             let resource = this.resources.find(r => r.item == block)
+            let amount = resource.amount(this.goalLevel)
             this.$store.commit('addToInventory', {
                 item: block,
-                count: resource.amount(this.goalLevel)
+                count: amount
             })
             this.$store.commit('addToInventory', {
                 item: 'xp',
                 count: resource.xp(this.goalLevel)
             })
+            if (amount >= 100) {
+                console.log(block + ' x' + amount)
+            }
         },
         getRandomBlock() {
             let weightSum = 0

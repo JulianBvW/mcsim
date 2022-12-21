@@ -24,6 +24,10 @@ export default [
             return 20
         },
         amount: (goalLevel) => {
+            if (goalLevel >= v.ACCESS_RAID && Math.random() >= 0.98) { return 100+(Math.round(Math.random()*30)+1) }
+            if (goalLevel >= v.GOT_COMMUNITY)     { return 10*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_GROUP)         { return 4*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_FRIEND)        { return 2*(Math.round(Math.random()*3)+1) }
             if (goalLevel >= v.ACCESS_ENCHANTING) { return Math.round(Math.random()*3)+1 }
             return 1
         },
@@ -39,6 +43,10 @@ export default [
             return 0
         },
         amount: (goalLevel) => {
+            if (goalLevel >= v.ACCESS_RAID && Math.random() >= 0.98) { return 100+(Math.round(Math.random()*30)+1) }
+            if (goalLevel >= v.GOT_COMMUNITY)     { return 10*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_GROUP)         { return 4*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_FRIEND)        { return 2*(Math.round(Math.random()*3)+1) }
             if (goalLevel >= v.ACCESS_ENCHANTING) { return Math.round(Math.random()*3)+1 }
             return 1
         },
@@ -54,6 +62,10 @@ export default [
             return 0
         },
         amount: (goalLevel) => {
+            if (goalLevel >= v.ACCESS_RAID && Math.random() >= 0.98) { return 100+(Math.round(Math.random()*30)+1) }
+            if (goalLevel >= v.GOT_COMMUNITY)     { return 10*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_GROUP)         { return 4*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_FRIEND)        { return 2*(Math.round(Math.random()*3)+1) }
             if (goalLevel >= v.ACCESS_ENCHANTING) { return Math.round(Math.random()*3)+1 }
             return 1
         },
@@ -69,6 +81,10 @@ export default [
             return 0
         },
         amount: (goalLevel) => {
+            if (goalLevel >= v.ACCESS_RAID && Math.random() >= 0.98) { return 100+(Math.round(Math.random()*30)+1) }
+            if (goalLevel >= v.GOT_COMMUNITY)     { return 10*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_GROUP)         { return 4*(Math.round(Math.random()*3)+1) }
+            if (goalLevel >= v.GOT_FRIEND)        { return 2*(Math.round(Math.random()*3)+1) }
             if (goalLevel >= v.ACCESS_ENCHANTING) { return Math.round(Math.random()*3)+1 }
             return 1
         },
