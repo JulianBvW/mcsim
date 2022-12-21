@@ -19,5 +19,6 @@ npm run build
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO
-- Farms producing Items
-- Levels
+- New Goals
+- Balancing?
+- Save before reloading
