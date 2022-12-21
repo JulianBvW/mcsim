@@ -84,7 +84,7 @@ export default [
             {
                 'stone': 20,
                 'coal': 5,
-                'iron': 10
+                'iron': 3
             },
             {
                 'wood': 15,

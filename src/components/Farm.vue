@@ -2,7 +2,7 @@
     <div class="farm-view">
         <p class="mcfont" :class="{ greyedOut: this.farmLevel == 0 }" style="font-size: large; margin-top: 5px;">{{ farm.name }}</p>
         <b-img class="upgrade-img-info" @click="attemptUpgrade()" :src="currentIcon" alt="upgrade" />
-        <b-progress class="production-progress" :variant="farm.barColor" :value="Math.random() * 10" :max="10" height="10px"></b-progress>
+        <b-progress class="production-progress" :variant="farm.barColor" :value="progressForProd" :max="1" height="10px"></b-progress>
 
         <div class="modal fade" tabindex="-1" :id="'modal-upgrade-farm' + farm.id">
             <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -42,6 +42,11 @@ import bootstrap from '../../node_modules/bootstrap/dist/js/bootstrap'
 
 export default {
     name: 'Farm',
+    data() {
+        return {
+            productionState: 0
+        }
+    },
     props: {
         farm: Object
     },
@@ -87,6 +92,9 @@ export default {
                 return this.farm.produces[1]
             }
             return this.farm.produces[this.farmLevel]
+        },
+        progressForProd() {
+            return this.productionState / (this.currentProductionRate-1)
         }
     },
     methods: {
@@ -114,6 +122,23 @@ export default {
                 return 0
             }
             return this.farm.produces[this.farmLevel+1][item] - count
+        },
+        productionStep() {
+            if (this.isLocked) { return }
+
+            this.productionState++
+            if (this.productionState >= this.currentProductionRate) {
+                this.productionState = 0
+                this.produceOutput()
+            }
+        },
+        produceOutput() {
+            for (let item in this.currentProduction) {
+                this.$store.commit('addToInventory', {
+                    item: item,
+                    count: this.currentProduction[item]
+                })
+            }
         }
     }
 }

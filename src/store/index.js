@@ -10,7 +10,7 @@ export default createStore({
         goalLevel: 0,
         farms: farms,
         farmLevel: new Array(farms.length).fill(0),
-        inventory: {'wood': 1000, 'xp': 1000}
+        inventory: {'wood': 10}
     },
     getters: {
         currentGoal(state) {
