@@ -1,22 +1,33 @@
 <template>
     <div>
-        <b-img v-if="goalLevel < 7" class="block" @click="mineBlock()" :src="getImgUrl(currentBlock)" :alt="currentBlock"></b-img>
+        <b-img v-if="goalLevel < 7" class="block" @click="mineBlock()" :src="getImgUrl('face-'+currentBlock)" :alt="currentBlock"></b-img>
         <div v-if="goalLevel >= 7" class="cluster" :class="{ 'cluster-clicked': clusterClicked }">
-            <b-img v-for="i in [0, 1, 2, 3]" :key="i" class="cluster-block" :class="{ 'cluster-block-clicked': clusterClicked }" :src="getImgUrl(currentBlocks[i])" :alt="currentBlocks[i]"></b-img>
+            <b-img v-for="i in [0, 1, 2, 3]" :key="i" class="cluster-block" :class="{ 'cluster-block-clicked': clusterClicked }" :src="getImgUrl('face-'+currentBlocks[i])" :alt="currentBlocks[i]"></b-img>
             <div class="cluster-button" @click="mineBlocks()"></div>
         </div>
     </div>
 </template>
 
 <script>
+import { Toaster, ToasterPosition, ToasterTimer, ToasterType } from "bs-toaster";
+
 export default {
     name: 'Block',
     data() {
         return {
             currentBlock: 'stone',
             currentBlocks: ['stone', 'stone', 'diamond', 'stone'],
-            clusterClicked: false
+            clusterClicked: false,
+
+            toaster: undefined
         }
+    },
+    mounted() {
+        this.toaster = new Toaster({
+            position: ToasterPosition.TOP_END,
+            type: ToasterType.SUCCESS,
+            delay: 7500
+        })
     },
     computed: {
         goalLevel() {
@@ -51,7 +62,7 @@ export default {
                 count: resource.xp(this.goalLevel)
             })
             if (amount >= 100) {
-                console.log(block + ' x' + amount)
+                this.toaster.create('Hero of the Village', 'The '+block+' you found was so beautiful, the village gave you <b>'+amount+' '+block+' pieces</b> for that!');
             }
         },
         getRandomBlock() {
@@ -72,9 +83,9 @@ export default {
 
             return 'stone'
         },
-        getImgUrl(resource) {
+        getImgUrl(f) {
             let images = require.context('../assets/', false, /\.png$/)
-            return images('./face-' + resource + ".png")
+            return images('./' + f + ".png")
         }
     }
 }
