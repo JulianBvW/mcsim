@@ -7,10 +7,11 @@ export default createStore({
     state: {
         resources: resources,
         goals: goals,
-        goalLevel: 0,
         farms: farms,
-        farmLevel: new Array(farms.length).fill(0),
-        inventory: {'wood': 10}
+
+        inventory: {'wood': 10},
+        goalLevel: 0,
+        farmLevel: new Array(farms.length).fill(0)
     },
     getters: {
         currentGoal(state) {
@@ -38,9 +39,22 @@ export default createStore({
                 state.inventory[item] -= reqs[item]
             }
             state.farmLevel[id]++
+        },
+        loadSaveString(state, saveString) {
+            let save = JSON.parse(saveString)
+            state.inventory = save['inventory']
+            state.goalLevel = save['goalLevel']
+            state.farmLevel = save['farmLevel']
         }
     },
     actions: {
+        createSaveString({ state }) {
+            return JSON.stringify({
+                'inventory': state.inventory,
+                'goalLevel': state.goalLevel,
+                'farmLevel': state.farmLevel
+            })
+        }
     },
     modules: {
     }
