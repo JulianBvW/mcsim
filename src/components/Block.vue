@@ -1,7 +1,7 @@
 <template>
     <div>
-        <b-img v-if="goalLevel < 7" class="block" @click="mineBlock()" :src="getImgUrl('face-'+currentBlock)" :alt="currentBlock"></b-img>
-        <div v-if="goalLevel >= 7" class="cluster" :class="{ 'cluster-clicked': clusterClicked }">
+        <b-img v-if="goalLevel < goals.ACCESS_TUNNEL_BORE" class="block" @click="mineBlock()" :src="getImgUrl('face-'+currentBlock)" :alt="currentBlock"></b-img>
+        <div v-if="goalLevel >= goals.ACCESS_TUNNEL_BORE" class="cluster" :class="{ 'cluster-clicked': clusterClicked }">
             <b-img v-for="i in [0, 1, 2, 3]" :key="i" class="cluster-block" :class="{ 'cluster-block-clicked': clusterClicked }" :src="getImgUrl('face-'+currentBlocks[i])" :alt="currentBlocks[i]"></b-img>
             <div class="cluster-button" @click="mineBlocks()"></div>
         </div>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import * as goals from '@/data/goal_aliases'
 import { Toaster, ToasterPosition, ToasterTimer, ToasterType } from "bs-toaster";
 
 export default {
@@ -18,6 +19,7 @@ export default {
             currentBlock: 'stone',
             currentBlocks: ['stone', 'stone', 'diamond', 'stone'],
             clusterClicked: false,
+            goals: goals,
 
             toaster: undefined
         }

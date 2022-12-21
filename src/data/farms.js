@@ -242,7 +242,7 @@ export default [
                 'xp': 10
             },
             {
-                'wood': 400,
+                'wood': 220,
                 'stone': 390,
                 'coal': 50,
                 'iron': 150,
