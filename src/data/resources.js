@@ -28,8 +28,8 @@ export default [
             return 1
         },
         xp: (goalLevel) => {
-            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.round(Math.random()*3) }
-            return Math.round(Math.random())
+            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.random() > 0.6 ? Math.round(Math.random()*3) : 0 }
+            return Math.random() > 0.9 ? 1 : 0
         }
     },
     {
@@ -43,8 +43,8 @@ export default [
             return 1
         },
         xp: (goalLevel) => {
-            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.round(Math.random()*3) }
-            return Math.round(Math.random())
+            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.random() > 0.6 ? Math.round(Math.random()*3) : 0 }
+            return Math.random() > 0.8 ? 1 : 0
         }
     },
     {
@@ -58,8 +58,8 @@ export default [
             return 1
         },
         xp: (goalLevel) => {
-            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.round(Math.random()*3)+2 }
-            return Math.round(Math.random())+1
+            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.random() > 0.6 ? Math.round(Math.random()*3)+2 : 0 }
+            return Math.random() > 0.6 ? 1 : 0
         }
     },
     {
@@ -73,8 +73,8 @@ export default [
             return 1
         },
         xp: (goalLevel) => {
-            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.round(Math.random()*3)+10 }
-            return Math.round(Math.random())+3
+            if (goalLevel >= v.ACCESS_ENCHANTING)  { return Math.random() > 0.6 ? Math.round(Math.random()*3)+10 : 0 }
+            return Math.random() > 0.3 ? 1 : 0
         }
     }
 ]
