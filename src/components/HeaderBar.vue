@@ -17,7 +17,7 @@
                         <p class="mcfont">Save String</p>
                         <b-form-input v-model="saveString" placeholder="Paste Save String"></b-form-input>
                         <hr/>
-                        <b-button @click="load()" variant="success" style="margin-right: 10px;">Load</b-button>
+                        <b-button @click="load()" variant="success" style="margin-right: 10px;" :disabled="!saveString">Load</b-button>
                         <b-button @click="save()" variant="success" style="margin-left: 10px;">Save</b-button>
                     </div>
                 </div>

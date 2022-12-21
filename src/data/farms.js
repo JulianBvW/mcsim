@@ -134,22 +134,22 @@ export default [
                 'wood': 0
             },
             {
-                'wood': 2
+                'wood': 4
             },
             {
-                'wood': 6
+                'wood': 14
             },
             {
-                'wood': 15
+                'wood': 40
             },
             {
-                'wood': 50
+                'wood': 170
             },
             {
-                'wood': 200
+                'wood': 770
             },
             {
-                'wood': 1000
+                'wood': 1900
             }
         ]
     },
@@ -335,34 +335,34 @@ export default [
                 'stone': 2300,
                 'coal': 890,
                 'iron': 1200,
-                'redstone': 0,
-                'diamond': 0,
-                'xp': 0
+                'redstone': 1500,
+                'diamond': 6,
+                'xp': 2000
             },
             {
                 'wood': 2400,
                 'stone': 20000,
                 'coal': 2900,
                 'iron': 7000,
-                'redstone': 0,
-                'diamond': 0,
-                'xp': 0
+                'redstone': 5000,
+                'diamond': 10,
+                'xp': 5000
             },
             {
                 'wood': 5600,
                 'stone': 47000,
                 'coal': 4000,
                 'iron': 11300,
-                'redstone': 0,
-                'diamond': 0,
-                'xp': 0
+                'redstone': 10000,
+                'diamond': 30,
+                'xp': 30000
             },
             {
                 'wood': 17000,
                 'stone': 190000,
                 'coal': 7000,
                 'iron': 27500,
-                'redstone': 13000,
+                'redstone': 23000,
                 'diamond': 90,
                 'xp': 100000
             }
@@ -415,33 +415,33 @@ export default [
             {
                 'wood': 800,
                 'stone': 1200,
-                'coal': 600,
-                'iron': 900,
-                'redstone': 400,
-                'diamond': 25,
+                'coal': 700,
+                'iron': 1900,
+                'redstone': 830,
+                'diamond': 55,
                 'xp': 8000
             },
             {
                 'wood': 1600,
-                'stone': 9000,
+                'stone': 38000,
                 'coal': 2100,
-                'iron': 3000,
+                'iron': 6000,
                 'redstone': 9000,
-                'diamond': 100,
+                'diamond': 120,
                 'xp': 20000
             },
             {
                 'wood': 3500,
-                'stone': 25000,
+                'stone': 65000,
                 'coal': 9000,
-                'iron': 21000,
+                'iron': 51000,
                 'redstone': 30000,
                 'diamond': 400,
                 'xp': 50000
             },
             {
                 'wood': 9000,
-                'stone': 90000,
+                'stone': 310000,
                 'coal': 15000,
                 'iron': 100000,
                 'redstone': 60000,
@@ -450,7 +450,7 @@ export default [
             },
             {
                 'wood': 60000,
-                'stone': 250000,
+                'stone': 950000,
                 'coal': 60000,
                 'iron': 260000,
                 'redstone': 160000,
@@ -491,7 +491,7 @@ export default [
                 'stone': 1000,
                 'coal': 300,
                 'iron': 200,
-                'redstone': 400,
+                'redstone': 100,
                 'diamond': 10,
                 'xp': 400
             },
@@ -500,7 +500,7 @@ export default [
                 'stone': 5000,
                 'coal': 600,
                 'iron': 900,
-                'redstone': 1000,
+                'redstone': 800,
                 'diamond': 20,
                 'xp': 1200
             },

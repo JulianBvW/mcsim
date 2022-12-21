@@ -42,7 +42,7 @@ export default [
         image: 'beacon',
         requires: {
             'wood': 1,
-            'diamond': 2,
+            'diamond': 10,
             'coal': 2
         }
     },
@@ -52,7 +52,8 @@ export default [
         image: 'haste',
         requires: {
             'iron': 1476,
-            'diamond': 1
+            'diamond': 1,
+            'xp': 200
         }
     },
     {
@@ -61,9 +62,9 @@ export default [
         image: 'tnt',
         requires: {
             'stone': 400,
-            'redstone': 40,
-            'iron': 300,
-            'xp': 100
+            'redstone': 240,
+            'iron': 1000,
+            'xp': 8000
         }
     },
     {
@@ -71,7 +72,7 @@ export default [
         name: 'Get Everything',
         image: 'trophy',
         requires: {
-            'diamond': 10000
+            'diamond': 100000
         }
     }
 ]

@@ -83,9 +83,9 @@ export default {
         },
         currentProductionRate() {
             if (this.isLocked) {
-                return 10
+                return 12
             }
-            return 12-this.farmLevel*2
+            return 14-this.farmLevel*2
         },
         currentProduction() {
             if (this.isLocked) {
