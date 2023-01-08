@@ -19,6 +19,8 @@
                         <hr/>
                         <b-button @click="load()" variant="success" style="margin-right: 10px;" :disabled="!saveString">Load</b-button>
                         <b-button @click="save()" variant="success" style="margin-left: 10px;">Save</b-button>
+                        <hr/>
+                        <b-button @click="reset()" variant="danger">Reset Progress</b-button>
                     </div>
                 </div>
             </div>
@@ -49,6 +51,9 @@ export default {
         load() {
             this.$store.commit('loadSaveString', this.saveString)
             this.saveString = ''
+        },
+        reset() {
+            this.$store.commit('resetProgress')
         },
         getImgUrl(f) {
             let images = require.context('../assets/', false, /\.png$/)

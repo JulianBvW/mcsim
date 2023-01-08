@@ -46,6 +46,9 @@ export default {
                 default: return 'pickaxe-diamond'
             }
         }
+    },
+    mounted() {
+        this.$store.commit('loadFromLocalStorage')
     }
 }
 </script>
