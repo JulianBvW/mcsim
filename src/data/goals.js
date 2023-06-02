@@ -80,7 +80,7 @@ export default [
         image: 'tnt',
         requires: {
             'stone': 400,
-            'redstone': 240,
+            'redstone': 3500,
             'iron': 1000,
             'xp': 8000
         }
